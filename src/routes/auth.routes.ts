@@ -15,7 +15,7 @@ const router = Router();
 
 router.post('/signup', validateRequest(signupSchema), AuthController.signup);
 router.post('/login', validateRequest(loginSchema), AuthController.login);
-router.post('/verify', userVerify);
+router.get('/verify', userVerify);
 
 router.put('/profile', auth, validateRequest(updateUserSchema), AuthController.updateProfile);
 router.post('/change-password', auth, validateRequest(changePasswordSchema), AuthController.changePassword);
