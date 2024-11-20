@@ -46,7 +46,7 @@ export const userVerify = async (req: AuthRequest, res: Response, next: NextFunc
       throw new Error();
     }
     req.user = user;
-    return res.status(200).json(user);
+    return res.status(200).json({data: user});
   } catch (error) {
     logger.error('Authentication error:', error);
     res.status(401).json({ error: 'Please authenticate' });
