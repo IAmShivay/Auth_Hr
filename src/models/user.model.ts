@@ -17,6 +17,7 @@ export interface IUser extends mongoose.Document {
   mobile?: string;
   companyId: string; // Add this line
   role: UserRole;
+  employeeId: string;
   resetPasswordToken?: string;
   resetPasswordExpires?: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -30,6 +31,10 @@ const userSchema = new mongoose.Schema(
       unique: true,
       lowercase: true,
       trim: true,
+    },
+    employeeId: {
+      type: String,
+      unique: true,
     },
     password: {
       type: String,

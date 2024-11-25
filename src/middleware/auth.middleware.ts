@@ -38,6 +38,7 @@ export const auth = async (
       companyName: user.companyName,
       fullName: user.fullName,
       mobile: user.mobile,
+      employeeId: user.employeeId,
     };
     next();
   } catch (error) {
@@ -75,6 +76,7 @@ export const userVerify = async (
       companyName: user.companyName,
       fullName: user.fullName,
       mobile: user.mobile,
+      empployeeId: user.employeeId,
     };
     return res.status(200).json({
       email: user.email,
@@ -84,6 +86,7 @@ export const userVerify = async (
       companyName: user.companyName,
       fullName: user.fullName,
       mobile: user.mobile,
+      employeeId: user.employeeId,
     });
   } catch (error) {
     logger.error("Authentication error:", error);
