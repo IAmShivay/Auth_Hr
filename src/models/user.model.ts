@@ -5,12 +5,13 @@ import { v4 as uuidv4 } from "uuid"; // Make sure to install this package: npm i
 export enum UserRole {
   COMPANY = "user",
   ADMIN = "admin",
+  EMPLOYEE = "employee",
 }
 
 export interface IUser extends mongoose.Document {
-  fullName: string;
+  fullName?: string;
   terms: boolean;
-  companyName: string;
+  companyName?: string;
   email: string;
   password: string;
   mobile?: string;
