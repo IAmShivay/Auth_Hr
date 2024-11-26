@@ -2,11 +2,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid"; // Make sure to install this package: npm install uuid
 
-export enum UserRole {
-  COMPANY = "user",
-  ADMIN = "admin",
-  EMPLOYEE = "employee",
-}
+
 
 export interface IUser extends mongoose.Document {
   fullName?: string;
@@ -16,7 +12,8 @@ export interface IUser extends mongoose.Document {
   password: string;
   mobile?: string;
   companyId: string; // Add this line
-  role: UserRole;
+  role: string;
+  roleId?: string;
   employeeId: string;
   resetPasswordToken?: string;
   resetPasswordExpires?: Date;
@@ -58,10 +55,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    roleId: {
+      type: String,
+      required: true,
+      default:""
+    },
     role: {
       type: String,
-      enum: Object.values(UserRole),
-      default: UserRole.COMPANY,
+      default: "Company",
+      required: true,
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date,

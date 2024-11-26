@@ -65,3 +65,71 @@
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-25T10:55:31.978Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T04:34:15.455Z"}
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T04:34:15.459Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"}},"index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"},"level":"error","message":"Signup error: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","stack":"MongoServerError: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }\n    at InsertOneOperation.execute (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\insert.ts:82:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at tryOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:271:14)\n    at executeOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:109:12)\n    at Collection.insertOne (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\collection.ts:277:12)","timestamp":"2024-11-26T05:45:27.919Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"}},"index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"},"level":"error","message":"Signup error: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","stack":"MongoServerError: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }\n    at InsertOneOperation.execute (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\insert.ts:82:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at tryOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:271:14)\n    at executeOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:109:12)\n    at Collection.insertOne (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\collection.ts:277:12)","timestamp":"2024-11-26T05:50:00.829Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"}},"index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77894@gmail.com"},"level":"error","message":"Signup error: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }","stack":"MongoServerError: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77894@gmail.com\" }\n    at InsertOneOperation.execute (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\insert.ts:82:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at tryOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:271:14)\n    at executeOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:109:12)\n    at Collection.insertOne (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\collection.ts:277:12)","timestamp":"2024-11-26T05:51:01.358Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:09:50.075Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:09:50.079Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:09:59.403Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:09:59.407Z"}
+{"code":11000,"errorResponse":{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77893@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77893@gmail.com"}},"index":0,"keyPattern":{"email":1},"keyValue":{"email":"shivaysharma77893@gmail.com"},"level":"error","message":"Signup error: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77893@gmail.com\" }","stack":"MongoServerError: E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"shivaysharma77893@gmail.com\" }\n    at InsertOneOperation.execute (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\insert.ts:82:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at tryOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:271:14)\n    at executeOperation (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:109:12)\n    at Collection.insertOne (D:\\SCRAFT\\Auth_Hr\\node_modules\\mongodb\\src\\collection.ts:277:12)","timestamp":"2024-11-26T06:12:08.575Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:23:27.284Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:23:27.290Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:25:32.215Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:25:32.220Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:26:17.247Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:26:17.251Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:26:35.500Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:26:35.505Z"}
+{"level":"error","message":"Error fetching users by company ID: Cannot destructure property 'companyId' of 'req.user' as it is undefined.","stack":"TypeError: Cannot destructure property 'companyId' of 'req.user' as it is undefined.\n    at getUsersByCompanyId (D:\\SCRAFT\\Auth_Hr\\src\\controllers\\auth.controller.ts:142:13)\n    at Layer.handle [as handle_request] (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:47:12)","timestamp":"2024-11-26T06:26:39.562Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:27:00.180Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:27:00.184Z"}
+{"level":"error","message":"Error fetching users by company ID: Cannot destructure property 'companyId' of 'req.user' as it is undefined.","stack":"TypeError: Cannot destructure property 'companyId' of 'req.user' as it is undefined.\n    at getUsersByCompanyId (D:\\SCRAFT\\Auth_Hr\\src\\controllers\\auth.controller.ts:142:13)\n    at Layer.handle [as handle_request] (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (D:\\SCRAFT\\Auth_Hr\\node_modules\\express\\lib\\router\\index.js:47:12)","timestamp":"2024-11-26T06:27:02.494Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:27:12.684Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:27:12.687Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:27:49.707Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:27:49.711Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:28:04.944Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:28:04.949Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:29:01.502Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:29:01.506Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:29:25.180Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:29:25.184Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:38:44.037Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:38:44.042Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:48:57.131Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:48:57.135Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:50:12.773Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:50:12.777Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T06:52:44.359Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T06:52:44.363Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T07:22:14.758Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T07:22:14.763Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T08:09:06.817Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T08:09:06.821Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T08:24:41.037Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T08:24:41.041Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T08:24:52.881Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T08:24:52.885Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:10:54.551Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:10:54.556Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:11:47.580Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:11:47.584Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:12:55.994Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:12:55.999Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:16:16.747Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:16:16.751Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:16:18.484Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:16:18.488Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:16:46.493Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:16:46.498Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:17:29.867Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:17:29.871Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:17:47.402Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:17:47.407Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:17:54.548Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:17:54.552Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:18:15.645Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:18:15.651Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-26T09:27:05.552Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-11-26T09:27:05.556Z"}

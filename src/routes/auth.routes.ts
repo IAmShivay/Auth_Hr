@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { AuthController } from '../controllers/auth.controller';
+import { AuthController, getUsersByCompanyId } from '../controllers/auth.controller';
 import { auth, userVerify } from '../middleware/auth.middleware';
 import { validateRequest } from '../middleware/validate.middleware';
 import {
@@ -16,7 +16,7 @@ const router = Router();
 router.post('/signup', validateRequest(signupSchema), AuthController.signup);
 router.post('/login', validateRequest(loginSchema), AuthController.login);
 router.get('/verify', userVerify);
-
+router.get('/getuser/:id',getUsersByCompanyId)
 router.put('/profile', auth, validateRequest(updateUserSchema), AuthController.updateProfile);
 router.post('/change-password', auth, validateRequest(changePasswordSchema), AuthController.changePassword);
 router.post('/forgot-password', validateRequest(forgotPasswordSchema), AuthController.forgotPassword);
