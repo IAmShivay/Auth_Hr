@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { User, UserRole } from "../models/user.model";
+import { User} from "../models/user.model";
 import logger from "../config/logger";
 import dotenv from "dotenv";
 dotenv.config();
@@ -94,7 +94,7 @@ export const userVerify = async (
   }
 };
 
-export const checkRole = (roles: UserRole[]) => {
+export const checkRole = (roles: any[]) => {
   return async (req: AuthRequest, res: Response, next: NextFunction) => {
     if (!req.user) {
       return res.status(401).json({ error: "Please authenticate" });

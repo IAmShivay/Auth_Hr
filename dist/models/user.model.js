@@ -3,14 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = exports.UserRole = void 0;
+exports.User = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
-var UserRole;
-(function (UserRole) {
-    UserRole["USER"] = "user";
-    UserRole["ADMIN"] = "admin";
-})(UserRole || (exports.UserRole = UserRole = {}));
+const uuid_1 = require("uuid"); // Make sure to install this package: npm install uuid
 const userSchema = new mongoose_1.default.Schema({
     email: {
         type: String,
@@ -19,9 +15,17 @@ const userSchema = new mongoose_1.default.Schema({
         lowercase: true,
         trim: true,
     },
+    employeeId: {
+        type: String,
+        unique: true,
+    },
     password: {
         type: String,
         required: true,
+    },
+    companyId: {
+        type: String,
+        default: uuid_1.v4, // This will generate a unique ID by default
     },
     fullName: {
         type: String,
@@ -37,14 +41,15 @@ const userSchema = new mongoose_1.default.Schema({
         type: String,
         trim: true,
     },
-    // terms: {
-    //   type: Boolean,
-    //   required: true
-    // },
+    roleId: {
+        type: String,
+        required: true,
+        default: ""
+    },
     role: {
         type: String,
-        enum: Object.values(UserRole),
-        default: UserRole.USER,
+        default: "Company",
+        required: true,
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date,

@@ -7,7 +7,7 @@ exports.signupSchema = zod_1.z.object({
     password: zod_1.z.string().min(6),
     fullName: zod_1.z.string().min(3),
     mobile: zod_1.z.string().optional(),
-    companyName: zod_1.z.string().min(3),
+    // companyName: z.string().min(3),
     // terms: z.boolean()
 });
 exports.loginSchema = zod_1.z.object({

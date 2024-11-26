@@ -8,6 +8,8 @@ const auth_validator_1 = require("../validators/auth.validator");
 const router = (0, express_1.Router)();
 router.post('/signup', (0, validate_middleware_1.validateRequest)(auth_validator_1.signupSchema), auth_controller_1.AuthController.signup);
 router.post('/login', (0, validate_middleware_1.validateRequest)(auth_validator_1.loginSchema), auth_controller_1.AuthController.login);
+router.get('/verify', auth_middleware_1.userVerify);
+router.get('/getuser/:id', auth_controller_1.getUsersByCompanyId);
 router.put('/profile', auth_middleware_1.auth, (0, validate_middleware_1.validateRequest)(auth_validator_1.updateUserSchema), auth_controller_1.AuthController.updateProfile);
 router.post('/change-password', auth_middleware_1.auth, (0, validate_middleware_1.validateRequest)(auth_validator_1.changePasswordSchema), auth_controller_1.AuthController.changePassword);
 router.post('/forgot-password', (0, validate_middleware_1.validateRequest)(auth_validator_1.forgotPasswordSchema), auth_controller_1.AuthController.forgotPassword);
