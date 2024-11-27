@@ -127,7 +127,16 @@ export class AuthController {
   static async resetPassword(req: Request, res: Response) {
     try {
       const { token } = req.params;
-      const {newPassword } = req.body;
+      const {newPassword,currentPassword } = req.body;
+      if (!token) {
+        return res.status(400).json({ error: "Reset token is required" });
+      }
+
+      if (newPassword === currentPassword) {
+        return res
+          .status(400)
+          .json({ error: "New password cannot be the same as the current password" });
+      }
 
       // Decode the token
       const decodedToken = decodeURIComponent(token);
@@ -155,6 +164,7 @@ export class AuthController {
     }
   }
 }
+
 export const getUsersByCompanyId = async (req: Request, res: Response) => {
   try {
     const { id: companyId } = req.params;
