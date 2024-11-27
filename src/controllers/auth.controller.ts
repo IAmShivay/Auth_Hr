@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import e, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.model";
 import logger from "../config/logger";
@@ -126,16 +126,19 @@ export class AuthController {
 
   static async resetPassword(req: Request, res: Response) {
     try {
-      const { token } = req.params;
-      const {newPassword,currentPassword } = req.body;
+      const { newPassword, confirmPassword, currentPassword, token } = req.body;
       if (!token) {
         return res.status(400).json({ error: "Reset token is required" });
       }
 
       if (newPassword === currentPassword) {
+        return res.status(400).json({
+          error: "New password cannot be the same as the current password",
+        });
+      } else if (newPassword !== confirmPassword) {
         return res
           .status(400)
-          .json({ error: "New password cannot be the same as the current password" });
+          .json({ error: "New password and confirm password do not match" });
       }
 
       // Decode the token
