@@ -126,7 +126,8 @@ export class AuthController {
 
   static async resetPassword(req: Request, res: Response) {
     try {
-      const { token, newPassword } = req.body;
+      const { token } = req.params;
+      const {newPassword } = req.body;
 
       // Decode the token
       const decodedToken = decodeURIComponent(token);
