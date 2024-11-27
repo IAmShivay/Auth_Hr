@@ -5,6 +5,10 @@ import logger from "../config/logger";
 import { AuthRequest } from "../middleware/auth.middleware";
 import crypto from "crypto";
 import { IUser } from "../models/user.model";
+import { sendMail } from "../mailer/mailer";
+import { passwordResetRequestedTemplate } from "../mailer/mailtemplate";
+import dotenv from "dotenv";
+dotenv.config();
 export class AuthController {
   static async signup(req: Request, res: Response) {
     try {
@@ -100,9 +104,18 @@ export class AuthController {
       }
 
       const resetToken = crypto.randomBytes(20).toString("hex");
+      const encodedToken = encodeURIComponent(resetToken);
       user.resetPasswordToken = resetToken;
       user.resetPasswordExpires = new Date(Date.now() + 3600000); // 1 hour
       await user.save();
+
+      const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${encodedToken}`;
+
+      await sendMail(
+        email,
+        "Password Reset Request",
+        passwordResetRequestedTemplate({ name: user.fullName, resetLink })
+      );
 
       res.json({ message: "Password reset email sent" });
     } catch (error) {
@@ -114,8 +127,12 @@ export class AuthController {
   static async resetPassword(req: Request, res: Response) {
     try {
       const { token, newPassword } = req.body;
+
+      // Decode the token
+      const decodedToken = decodeURIComponent(token);
+
       const user = await User.findOne({
-        resetPasswordToken: token,
+        resetPasswordToken: decodedToken,
         resetPasswordExpires: { $gt: Date.now() },
       });
 
@@ -130,7 +147,7 @@ export class AuthController {
       user.resetPasswordExpires = undefined;
       await user.save();
 
-      res.json({ message: "Password has been reset" });
+      res.json({ message: "Password has been reset successfully" });
     } catch (error) {
       logger.error("Reset password error:", error);
       res.status(400).json({ error: "Error resetting password" });
@@ -141,7 +158,7 @@ export const getUsersByCompanyId = async (req: Request, res: Response) => {
   try {
     const { id: companyId } = req.params;
     console.log(companyId);
-    
+
     // Validate the companyId
     if (!companyId || typeof companyId !== "string") {
       return res
@@ -150,9 +167,9 @@ export const getUsersByCompanyId = async (req: Request, res: Response) => {
     }
 
     // Find users by companyId and exclude those with the role 'employee'
-    const users: IUser[] = await User.find({ 
-      companyId, 
-      role: { $nin: ['employee', 'user'] } // Exclude users with role 'employee'
+    const users: IUser[] = await User.find({
+      companyId,
+      role: { $nin: ["employee", "user"] }, // Exclude users with role 'employee'
     }).select("_id email role fullName");
 
     // If no users are found, return a 404 error
@@ -171,4 +188,3 @@ export const getUsersByCompanyId = async (req: Request, res: Response) => {
       .json({ message: "Error fetching users by company ID", error });
   }
 };
-
