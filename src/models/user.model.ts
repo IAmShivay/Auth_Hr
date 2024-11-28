@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid"; // Make sure to install this package: npm install uuid
 
-
-
 export interface IUser extends mongoose.Document {
   fullName?: string;
   terms: boolean;
@@ -57,8 +55,7 @@ const userSchema = new mongoose.Schema(
     },
     roleId: {
       type: String,
-      required: true,
-      default:""
+      default: "",
     },
     role: {
       type: String,

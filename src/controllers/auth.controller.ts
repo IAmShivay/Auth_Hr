@@ -77,13 +77,19 @@ export class AuthController {
 
   static async changePassword(req: AuthRequest, res: Response) {
     try {
-      const { currentPassword, newPassword } = req.body;
-      const user = await User.findById(req.user._id);
-
-      if (!user || !(await user.comparePassword(currentPassword))) {
-        return res.status(400).json({ error: "Current password is incorrect" });
+      const { email } = req.user;
+      const { currentPassword, newPassword, confirmPassword } = req.body;
+      if (newPassword !== confirmPassword) {
+        return res
+          .status(400)
+          .json({ error: "New password and confirm password do not match" });
       }
 
+      const user = await User.findOne({ email });
+
+      if (!user || !(await user.comparePassword(currentPassword))) {
+        return res.status(401).json({ error: "Invalid credentials" });
+      }
       user.password = newPassword;
       await user.save();
 
