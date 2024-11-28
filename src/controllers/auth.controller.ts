@@ -54,7 +54,8 @@ export class AuthController {
   static async updateProfile(req: AuthRequest, res: Response) {
     try {
       const updates = Object.keys(req.body);
-      const allowedUpdates = ["username", "email", "mobile"];
+
+      const allowedUpdates = ["fullName", "email", "mobile"];
       const isValidOperation = updates.every((update) =>
         allowedUpdates.includes(update)
       );
@@ -63,11 +64,10 @@ export class AuthController {
         return res.status(400).json({ error: "Invalid updates" });
       }
 
-      const user = await User.findByIdAndUpdate(req.user._id, req.body, {
+      const user = await User.findByIdAndUpdate(req.user.userId, req.body, {
         new: true,
         runValidators: true,
       });
-
       res.json(user);
     } catch (error) {
       logger.error("Update profile error:", error);
