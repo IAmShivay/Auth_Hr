@@ -115,7 +115,7 @@ export class AuthController {
       user.resetPasswordExpires = new Date(Date.now() + 3600000); // 1 hour
       await user.save();
 
-      const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${encodedToken}`;
+      const resetLink = `${process.env.FRONTEND_URL}reset-password?token=${encodedToken}`;
 
       await sendMail(
         email,
