@@ -553,3 +553,9 @@
 {"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-04T05:47:58.089Z"}
 {"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-04T05:47:58.091Z"}
 {"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-04T05:47:58.177Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-04T07:23:48.438Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-04T07:23:48.442Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-04T07:30:17.008Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-04T07:30:17.012Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-04T07:31:45.410Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-04T07:31:45.414Z"}
