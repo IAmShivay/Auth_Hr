@@ -21,6 +21,6 @@ router.put('/profile', auth, validateRequest(updateUserSchema), AuthController.u
 router.post('/change-password', auth, validateRequest(changePasswordSchema), AuthController.changePassword);
 router.post('/forgot-password', validateRequest(forgotPasswordSchema), AuthController.forgotPassword);
 router.post('/reset-password', validateRequest(resetPasswordSchema), AuthController.resetPassword);
-router.post('/add-user', addUser);
+router.post('/add-user',auth, addUser);
 
 export default router;

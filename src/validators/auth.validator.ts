@@ -9,6 +9,14 @@ export const signupSchema = z.object({
   // terms: z.boolean()
 });
 
+export const addUsers = z.object({
+  email: z.string().email(),
+  fullName: z.string().min(3),
+  mobileNumber: z.string().optional(),
+  // companyName: z.string().min(3),
+  // terms: z.boolean()
+});
+
 export const loginSchema = z.object({
   email: z.string().email(),
   password: z.string()
