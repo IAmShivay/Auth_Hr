@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { AuthController, getUsersByCompanyId } from '../controllers/auth.controller';
+import { addUser, AuthController, getUsersByCompanyId } from '../controllers/auth.controller';
 import { auth, userVerify } from '../middleware/auth.middleware';
 import { validateRequest } from '../middleware/validate.middleware';
 import {
@@ -21,5 +21,6 @@ router.put('/profile', auth, validateRequest(updateUserSchema), AuthController.u
 router.post('/change-password', auth, validateRequest(changePasswordSchema), AuthController.changePassword);
 router.post('/forgot-password', validateRequest(forgotPasswordSchema), AuthController.forgotPassword);
 router.post('/reset-password', validateRequest(resetPasswordSchema), AuthController.resetPassword);
+router.post('/add-user', addUser);
 
 export default router;

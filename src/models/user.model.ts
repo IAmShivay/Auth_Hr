@@ -13,6 +13,8 @@ export interface IUser extends mongoose.Document {
   role: string;
   roleId?: string;
   employeeId: string;
+  permissions?: string[];
+  status?: string;
   resetPasswordToken?: string;
   resetPasswordExpires?: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -37,17 +39,25 @@ const userSchema = new mongoose.Schema(
     },
     companyId: {
       type: String,
-      default: uuidv4, // This will generate a unique ID by default
+      default: uuidv4,
     },
     fullName: {
       type: String,
       required: true,
       trim: true,
     },
+    status: {
+      type: String,
+      default: "Active",
+      required: true,
+    },
     companyName: {
       type: String,
       required: true,
       trim: true,
+    },
+    permissions: {
+      type: [String],
     },
     mobile: {
       type: String,
