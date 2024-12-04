@@ -12,8 +12,13 @@ dotenv.config();
 export class AuthController {
   static async signup(req: Request, res: Response) {
     try {
-      console.log(req.body);
       const user = new User(req.body);
+    const { email } = req.body;
+
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        return res.status(409).json({ error: "User with this email already exists" });
+      }
       await user.save();
 
       const token = jwt.sign(
