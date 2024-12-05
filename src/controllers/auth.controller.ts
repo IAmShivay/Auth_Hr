@@ -264,3 +264,72 @@ export const addUser = async (req: any, res: Response) => {
     res.status(400).json({ error: "Error creating user" });
   }
 };
+
+// export const updateUserDetails = async (req: AuthRequest, res: Response) => {
+//   try {
+//     const { userId } = req.params;
+//     const { permissions, role, fullName, status } = req.body;
+
+//     // Check if the user exists
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return res.status(404).json({ error: "User not found" });
+//     }
+
+//     // Update user details
+//     if (permissions) user.permissions = permissions;
+//     if (role) user.role = role;
+//     if (fullName) user.fullName = fullName;
+//     if (status !== undefined) user.status = status;
+
+//     await user.save();
+
+//     res.status(200).json({ message: "User updated successfully", user });
+//   } catch (error) {
+//     logger.error("Error updating user details:", error);
+//     res.status(500).json({ error: "Error updating user details" });
+//   }
+// };
+
+
+// const validPermissions = ['read', 'update', 'delete', 'all'];
+
+
+// export const updateUserDetails = async (req: AuthRequest, res: Response) => {
+//   try {
+//     const { userId } = req.params;
+//     const { permissions, role, fullName, status } = req.body;
+
+//     // Check if the user exists
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return res.status(404).json({ error: "User not found" });
+//     }
+
+//     // Update user details
+//     if (permissions) {
+//       // Validate permissions
+//       if (!Array.isArray(permissions)) {
+//         return res.status(400).json({ error: "Permissions must be an array" });
+//       }
+      
+//       const invalidPermissions = permissions.filter(p => !validPermissions.includes(p));
+//       if (invalidPermissions.length > 0) {
+//         return res.status(400).json({ error: `Invalid permissions: ${invalidPermissions.join(', ')}` });
+//       }
+
+//       user.permissions = permissions;
+//     }
+    
+//     if (role) user.role = role;
+//     if (fullName) user.fullName = fullName;
+//     if (status !== undefined) user.status = status;
+
+//     await user.save();
+
+//     res.status(200).json({ message: "User updated successfully", user });
+//   } catch (error) {
+//     logger.error("Error updating user details:", error);
+//     res.status(500).json({ error: "Error updating user details" });
+//   }
+// };
