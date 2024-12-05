@@ -971,3 +971,5 @@
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-05T18:15:46.877Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-05T18:17:48.186Z"}
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-05T18:17:48.189Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-05T18:28:42.131Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-05T18:28:42.135Z"}
