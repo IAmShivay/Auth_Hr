@@ -19,8 +19,8 @@ export class AuthController {
   static async signup(req: Request, res: Response) {
     try {
       const user = new User(req.body);
-      const { email, role, fullName } = req.body;
-
+      const { email, role, fullName,companyName } = req.body;
+      console.log(req.body);
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res
@@ -31,7 +31,7 @@ export class AuthController {
       await sendMail(
         email,
         "Welcome to Our Company",
-        companyRegistrationTemplate(fullName, role, email)
+        companyRegistrationTemplate({ fullName, role, email,companyName })
       );
 
       const token = jwt.sign(

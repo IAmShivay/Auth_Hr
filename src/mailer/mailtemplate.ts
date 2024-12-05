@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export const passwordResetRequestedTemplate = (resetDetails: any) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -167,11 +170,12 @@ export const newEmployeeTemplate = ({
 </html>
 `;
 
-export const companyRegistrationTemplate = (
-  companyName: string,
-  adminName: string,
-  email: string
-) => `
+export const companyRegistrationTemplate = ({
+  fullName,
+  role,
+  email,
+  companyName,
+}: any) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -249,15 +253,14 @@ export const companyRegistrationTemplate = (
 <body>
   <div class="container">
     <h1>Welcome to Our Platform!</h1>
-    <p>Dear ${adminName.charAt(0).toUpperCase()},</p>
+    <p>Dear ${fullName},</p>
     <p>We're thrilled to welcome your company, <strong>${companyName}</strong>, to our platform.</p>
     <p>Here are the details of your registration:</p>
     <ul>
-      <li><strong>Administrator Name:</strong> ${adminName}</li>
       <li><strong>Email:</strong> ${email}</li>
     </ul>
     <p>To start managing your company's account, please log in to your dashboard using the link below:</p>
-    <a href="/api/auth/login" class="login-btn">Log In</a>
+    <a href="${process.env.FRONTEND_URL}/api/auth/login" class="login-btn">Log In</a>
   </div>
 </body>
 </html>
