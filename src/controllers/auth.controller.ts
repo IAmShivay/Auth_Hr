@@ -263,7 +263,7 @@ export const addUser = async (req: any, res: Response) => {
     );
 
     res.status(201).json({ user, token });
-  } catch (error:any) {
+  } catch (error: any) {
     logger.error("Signup error:", error);
     res.status(400).json({ error: error.message });
   }
@@ -281,7 +281,15 @@ export const updateUserDetails = async (req: AuthRequest, res: Response) => {
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
-
+    if (
+      user?.role === "employee" ||
+      user?.role === "Hr Manager" ||
+      user?.role === "Viewer"
+    ) {
+      return res
+        .status(400)
+        .json({ error: "You are not authorized to update this user" });
+    }
     // Update user details
     if (permissions) user.permissions = permissions;
     if (role) user.role = role;
