@@ -269,31 +269,37 @@ export const addUser = async (req: any, res: Response) => {
   }
 };
 
-// export const updateUserDetails = async (req: AuthRequest, res: Response) => {
-//   try {
-//     const { userId } = req.params;
-//     const { permissions, role, fullName, status } = req.body;
+export const updateUserDetails = async (req: AuthRequest, res: Response) => {
+  try {
+    const { userId } = req.user;
+    const { permissions, role, fullName, status } = req.body;
 
-//     // Check if the user exists
-//     const user = await User.findById(userId);
-//     if (!user) {
-//       return res.status(404).json({ error: "User not found" });
-//     }
+    // Check if the user exists
 
-//     // Update user details
-//     if (permissions) user.permissions = permissions;
-//     if (role) user.role = role;
-//     if (fullName) user.fullName = fullName;
-//     if (status !== undefined) user.status = status;
+    const user = await User.findById(userId);
+    if (user?.role === "Company") {
+      return res
+        .status(401)
+        .json({ error: "You do not have permission to perform this action" });
+    }
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
 
-//     await user.save();
+    // Update user details
+    if (permissions) user.permissions = permissions;
+    if (role) user.role = role;
+    if (fullName) user.fullName = fullName;
+    if (status !== undefined) user.status = status;
 
-//     res.status(200).json({ message: "User updated successfully", user });
-//   } catch (error) {
-//     logger.error("Error updating user details:", error);
-//     res.status(500).json({ error: "Error updating user details" });
-//   }
-// };
+    await user.save();
+
+    res.status(200).json({ message: "User updated successfully", user });
+  } catch (error) {
+    logger.error("Error updating user details:", error);
+    res.status(500).json({ error: "Error updating user details" });
+  }
+};
 
 // const validPermissions = ['read', 'update', 'delete', 'all'];
 
