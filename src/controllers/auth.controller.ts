@@ -263,9 +263,9 @@ export const addUser = async (req: any, res: Response) => {
     );
 
     res.status(201).json({ user, token });
-  } catch (error) {
+  } catch (error:any) {
     logger.error("Signup error:", error);
-    res.status(400).json({ error: "Error creating user" });
+    res.status(400).json({ error: error.message });
   }
 };
 
@@ -277,11 +277,7 @@ export const updateUserDetails = async (req: AuthRequest, res: Response) => {
     // Check if the user exists
 
     const user = await User.findById(userId);
-    if (user?.role === "Company") {
-      return res
-        .status(401)
-        .json({ error: "You do not have permission to perform this action" });
-    }
+
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
