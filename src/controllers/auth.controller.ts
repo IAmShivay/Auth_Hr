@@ -19,8 +19,7 @@ export class AuthController {
   static async signup(req: Request, res: Response) {
     try {
       const user = new User(req.body);
-      const { email, role, fullName,companyName } = req.body;
-      console.log(req.body);
+      const { email, role, fullName, companyName } = req.body;
       const existingUser = await User.findOne({ email });
       if (existingUser) {
         return res
@@ -31,7 +30,7 @@ export class AuthController {
       await sendMail(
         email,
         "Welcome to Our Company",
-        companyRegistrationTemplate({ fullName, role, email,companyName })
+        companyRegistrationTemplate({ fullName, role, email, companyName })
       );
 
       const token = jwt.sign(
@@ -51,11 +50,16 @@ export class AuthController {
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ email });
-
+      console.log(user);
       if (!user || !(await user.comparePassword(password))) {
         return res.status(401).json({ error: "Invalid credentials" });
       }
-
+      if (user.status === "inactive") {
+        return res.status(401).json({ error: "Your account is inactive" });
+      }
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
       const token = jwt.sign(
         { userId: user._id },
         process.env.JWT_SECRET || "your-secret-key",
@@ -64,6 +68,7 @@ export class AuthController {
 
       res.json({ user, token });
     } catch (error) {
+      console.log(error);
       logger.error("Login error:", error);
       res.status(400).json({ error: "Error logging in" });
     }
