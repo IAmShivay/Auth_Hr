@@ -271,9 +271,8 @@ export const addUser = async (req: any, res: Response) => {
 
 export const updateUserDetails = async (req: AuthRequest, res: Response) => {
   try {
-    const { userId } = req.user;
+    const { id: userId } = req.params;
     const { permissions, role, fullName, status } = req.body;
-
     // Check if the user exists
 
     const user = await User.findById(userId);
