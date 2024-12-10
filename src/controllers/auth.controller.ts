@@ -295,8 +295,9 @@ export const updateUserDetails = async (req: AuthRequest, res: Response) => {
     if (status !== undefined) user.status = status;
 
     await user.save();
+    const { password, resetPasswordToken, resetPasswordExpires, ...safeUser } = user;
 
-    res.status(200).json({ message: "User updated successfully", user });
+    res.status(200).json({ message: "User updated successfully", safeUser });
   } catch (error) {
     logger.error("Error updating user details:", error);
     res.status(500).json({ error: "Error updating user details" });
