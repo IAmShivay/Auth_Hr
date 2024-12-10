@@ -1750,3 +1750,17 @@
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-10T11:22:56.993Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-10T11:29:02.764Z"}
 {"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-10T11:29:02.768Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:49.988Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.040Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.120Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.235Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.241Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.326Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.337Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.411Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.417Z"}
+{"level":"error","message":"Authentication error:","stack":"Error: \n    at userVerify (D:\\SCRAFT\\Auth_Hr\\src\\middleware\\auth.middleware.ts:69:13)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2024-12-10T11:44:50.498Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-10T11:55:44.519Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-10T11:55:44.523Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-12-10T11:55:49.443Z"}
+{"level":"info","message":"Server is running on port 4000","timestamp":"2024-12-10T11:55:49.447Z"}
