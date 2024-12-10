@@ -19,6 +19,7 @@ export class AuthController {
   static async signup(req: Request, res: Response) {
     try {
       const user = new User(req.body);
+      console.log(user);
       const { email, role, fullName, companyName } = req.body;
       const existingUser = await User.findOne({ email });
       if (existingUser) {

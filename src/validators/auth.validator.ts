@@ -4,7 +4,7 @@ export const signupSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
   fullName: z.string().min(3),
-  mobileNumber: z.string().optional(),
+  mobile: z.string().optional(),
   // companyName: z.string().min(3),
   // terms: z.boolean()
 });
