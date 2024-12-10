@@ -213,7 +213,7 @@ export const getUsersByCompanyId = async (req: Request, res: Response) => {
     // Find users by companyId and exclude those with the role 'employee'
     const users: IUser[] = await User.find({
       companyId,
-      // role: { $nin: ["employee", "user"] }, // Exclude users with role 'employee'
+      role: { $nin: ["employee", "user"] }, // Exclude users with role 'employee'
     }).select("_id email role fullName permissions status ");
 
     // If no users are found, return a 404 error
