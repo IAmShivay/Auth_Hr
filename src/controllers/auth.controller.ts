@@ -282,9 +282,7 @@ export const updateUserDetails = async (req: AuthRequest, res: Response) => {
       return res.status(404).json({ error: "User not found" });
     }
     if (
-      user?.role === "employee" ||
-      user?.role === "Hr Manager" ||
-      user?.role === "Viewer"
+      user?.role === "employee"
     ) {
       return res
         .status(400)
