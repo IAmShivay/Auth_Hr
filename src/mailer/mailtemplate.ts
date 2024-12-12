@@ -164,7 +164,7 @@ export const newEmployeeTemplate = ({
 
     </ul>
     <p>Please log in to our system to complete your profile and get started.</p>
-    <a href="/api/auth/login" class="login-btn">Log In</a>
+    <a href="${process.env.FRONTEND_URL}/api/auth/login" class="login-btn">Log In</a>
   </div>
 </body>
 </html>
