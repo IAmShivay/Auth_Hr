@@ -164,7 +164,7 @@ export const newEmployeeTemplate = ({
 
     </ul>
     <p>Please log in to our system to complete your profile and get started.</p>
-    <a href="${process.env.FRONTEND_URL}/api/auth/login" class="login-btn">Log In</a>
+    <a href="${process.env.FRONTEND_URL}/login" class="login-btn">Log In</a>
   </div>
 </body>
 </html>
@@ -260,7 +260,7 @@ export const companyRegistrationTemplate = ({
       <li><strong>Email:</strong> ${email}</li>
     </ul>
     <p>To start managing your company's account, please log in to your dashboard using the link below:</p>
-    <a href="${process.env.FRONTEND_URL}/api/auth/login" class="login-btn">Log In</a>
+    <a href="${process.env.FRONTEND_URL}/login" class="login-btn">Log In</a>
   </div>
 </body>
 </html>
